@@ -13,5 +13,15 @@
     "id": 3,
     "title": "Membuat web dengan html + css",
     "completed": false
+  },
+  {
+    "id": 4,
+    "title": "Memasak Nasi Goreng",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "title": "Memasak Nasi Lemak",
+    "completed": true
   }
 ]
