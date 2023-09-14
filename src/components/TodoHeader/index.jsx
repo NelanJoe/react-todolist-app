@@ -14,7 +14,7 @@ const TodoHeader = ({ onSearchTodo }) => {
           <div className="sm:w-1/4 sm:self-end">
             <Link
               className="inline-block text-center font-semibold rounded-md text-white w-full bg-teal-500 hover:bg-teal-600 active:bg-teal-700 px-8 py-2"
-              to="add-todo"
+              to="/add-todo"
             >
               Add New Todo
             </Link>

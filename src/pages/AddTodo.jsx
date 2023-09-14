@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "../layouts/Layout";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const AddTodo = ({ onAddTodo }) => {
   const [value, setValue] = useState("");
@@ -32,6 +33,12 @@ const AddTodo = ({ onAddTodo }) => {
               <button className="font-semibold text-white py-2 rounded-md bg-teal-500 hover:bg-teal-500 active:bg-teal-700 focus:bg-teal-400">
                 Add Todo
               </button>
+              <Link
+                className="inline-block text-center font-semibold rounded-md text-white w-full bg-red-500 hover:bg-red-600 active:bg-red-700 px-8 py-2"
+                to="/"
+              >
+                Cancel
+              </Link>
             </div>
           </form>
         </div>
