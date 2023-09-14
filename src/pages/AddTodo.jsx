@@ -20,7 +20,7 @@ const AddTodo = ({ onAddTodo }) => {
   return (
     <Layout>
       <div className="mt-12">
-        <h1 className="my-8 font-semibold text-4xl text-center">Todoinput</h1>
+        <h2 className="font-bold text-4xl text-center">TodoInput</h2>
         <div className="shadow-md border-2 px-6 py-8 rounded-md">
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-2">
