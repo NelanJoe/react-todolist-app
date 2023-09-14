@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Membuat web sederhana",
+    "completed": true
+  },
+  {
+    "id": 2,
+    "title": "Membuat web menggunakan reactjs",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "title": "Membuat web dengan html + css",
+    "completed": false
+  }
+]
