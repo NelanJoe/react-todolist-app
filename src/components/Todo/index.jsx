@@ -30,11 +30,11 @@ const Todo = ({
   return (
     <>
       {isEditing ? (
-        <div className="shadow-md border-2 px-1 md:px-4 py-4 rounded-md">
+        <div className="shadow-md border-2 px-4 py-4 rounded-md">
           <div className="flex items-center">
-            <div className="sm:w-full">
+            <div className="w-full">
               <form action="" onSubmit={handleSaveEditing}>
-                <div className="flex space-x-3">
+                <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-2 md:space-y-0">
                   <input
                     type="text"
                     value={value}
@@ -42,11 +42,11 @@ const Todo = ({
                     onChange={(e) => setValue(e.target.value)}
                     className="border-2 w-full px-4 py-2 rounded-sm"
                   />
-                  <button className="font-semibold w-[20%] text-white py-2 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:bg-teal-300 rounded-md">
+                  <button className="font-semibold w-full sm:w-[20%] text-white py-2 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 focus:bg-teal-300 rounded-md">
                     Save
                   </button>
                   <button
-                    className="font-semibold w-[20%] text-white py-2 bg-red-500 hover:bg-red-600 active:bg-red-700 focus:bg-red-300 rounded-md"
+                    className="font-semibold w-full sm:w-[20%] text-white py-2 bg-red-500 hover:bg-red-600 active:bg-red-700 focus:bg-red-300 rounded-md"
                     onClick={onEditing}
                   >
                     Cancel
@@ -57,7 +57,7 @@ const Todo = ({
           </div>
         </div>
       ) : (
-        <div className="flex justify-between items-center shadow-md border-2 px-1 md:px-4 py-4 rounded-md">
+        <div className="flex justify-between items-center shadow-md border-2 px-4 py-4 rounded-md">
           <p
             className={`md:font-semibold md:text-lg ${
               completed && "line-through text-red-500"
