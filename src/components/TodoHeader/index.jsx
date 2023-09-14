@@ -7,8 +7,8 @@ const TodoHeader = ({ onSearchTodo }) => {
     <div className="mt-12">
       <h2 className="font-bold text-4xl text-center">TodoSearch</h2>
       <div className="border-2 shadow-md px-6 py-8 mt-5 rounded-md">
-        <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
-          <div className="sm:w-3/5">
+        <div className="flex flex-col sm:flex-row justify-between sm:space-x-8 space-y-2 sm:space-y-0">
+          <div className="sm:w-4/5">
             <SearchTodo onSearchTodo={onSearchTodo} />
           </div>
           <div className="sm:w-1/4 sm:self-end">

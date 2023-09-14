@@ -8,10 +8,12 @@ import { useState } from "react";
 
 const Home = ({
   todos,
+  onEditTodo,
   onDeleteTodo,
   onSearchTodo,
   onDeleteAllTodo,
   onCompletedTodo,
+  onDeleteDoneTodo,
 }) => {
   // Make state queryParams to filtered data todos
   const [queryParams, setQueryParams] = useState("all");
@@ -45,6 +47,7 @@ const Home = ({
                   id={todo.id}
                   title={todo.title}
                   completed={todo.completed}
+                  onEditTodo={onEditTodo}
                   onDeleteTodo={onDeleteTodo}
                   onCompletedTodo={onCompletedTodo}
                 />
@@ -59,17 +62,22 @@ const Home = ({
           </h1>
         </div>
       )}
-      <TodoFooter onDeleteAllTodo={onDeleteAllTodo} />
+      <TodoFooter
+        onDeleteAllTodo={onDeleteAllTodo}
+        onDeleteDoneTodo={onDeleteDoneTodo}
+      />
     </Layout>
   );
 };
 
 Home.propTypes = {
   todos: PropTypes.array,
+  onEditTodo: PropTypes.func,
   onDeleteTodo: PropTypes.func,
-  onDeleteAllTodo: PropTypes.func,
   onCompletedTodo: PropTypes.func,
   onSearchTodo: PropTypes.func,
+  onDeleteAllTodo: PropTypes.func,
+  onDeleteDoneTodo: PropTypes.func,
 };
 
 export default Home;

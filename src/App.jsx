@@ -26,6 +26,14 @@ const App = () => {
     setTodos(newTodo);
   };
 
+  const handleEditTodo = (id, title) => {
+    setTodos((todos) =>
+      todos.map((todo) => {
+        return todo.id === id ? { ...todo, title } : todo;
+      })
+    );
+  };
+
   /**
    * Delete todo
    * filtered todos array then, if(todo !== params.id) then remove todo
@@ -71,6 +79,10 @@ const App = () => {
     if (confirmed) setTodos([]);
   };
 
+  const handleDeleteDoneTodo = () => {
+    setTodos((todos) => todos.filter((todo) => !todo.completed));
+  };
+
   return (
     <RouterProvider
       router={createBrowserRouter([
@@ -79,10 +91,12 @@ const App = () => {
           element: (
             <Home
               todos={filteredTodos}
+              onEditTodo={handleEditTodo}
               onDeleteTodo={handleDeleteTodo}
               onSearchTodo={handleSearchTodo}
-              onDeleteAllTodo={handleDeleteAllTodo}
               onCompletedTodo={handleToggleCompleted}
+              onDeleteAllTodo={handleDeleteAllTodo}
+              onDeleteDoneTodo={handleDeleteDoneTodo}
             />
           ),
         },
