@@ -45,7 +45,7 @@ const Home = ({
                 <Todo
                   key={todo.id}
                   id={todo.id}
-                  title={todo.title}
+                  task={todo.task}
                   completed={todo.completed}
                   onEditTodo={onEditTodo}
                   onDeleteTodo={onDeleteTodo}

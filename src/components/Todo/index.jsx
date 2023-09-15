@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Todo = ({
   id,
-  title,
+  task,
   completed,
   onEditTodo,
   onDeleteTodo,
@@ -38,7 +38,7 @@ const Todo = ({
                   <input
                     type="text"
                     value={value}
-                    placeholder={title}
+                    placeholder={task}
                     onChange={(e) => setValue(e.target.value)}
                     className="border-2 w-full px-4 py-2 rounded-sm"
                   />
@@ -63,7 +63,7 @@ const Todo = ({
               completed && "line-through text-red-500"
             }`}
           >
-            {title}
+            {task}
           </p>
           <div className="space-x-2 md:space-x-3">
             <input
@@ -87,7 +87,7 @@ const Todo = ({
 
 Todo.propTypes = {
   id: PropTypes.number,
-  title: PropTypes.string,
+  task: PropTypes.string,
   completed: PropTypes.bool,
   onEditTodo: PropTypes.func,
   onDeleteTodo: PropTypes.func,

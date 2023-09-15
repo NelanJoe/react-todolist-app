@@ -13,12 +13,12 @@ const App = () => {
   /**
    * Add todo
    * */
-  const handleAddTodo = (title) => {
+  const handleAddTodo = (task) => {
     const newTodo = [
       ...todos,
       {
         id: +new Date(),
-        title,
+        task,
         completed: false,
       },
     ];
@@ -26,10 +26,10 @@ const App = () => {
     setTodos(newTodo);
   };
 
-  const handleEditTodo = (id, title) => {
+  const handleEditTodo = (id, task) => {
     setTodos((todos) =>
       todos.map((todo) => {
-        return todo.id === id ? { ...todo, title } : todo;
+        return todo.id === id ? { ...todo, task } : todo;
       })
     );
   };
@@ -65,7 +65,7 @@ const App = () => {
 
   useEffect(() => {
     const newFilteredTodos = todos.filter((todo) => {
-      return todo.title.toLocaleLowerCase().includes(searchQuery.toLowerCase());
+      return todo.task.toLocaleLowerCase().includes(searchQuery.toLowerCase());
     });
 
     setFilteredTodos(newFilteredTodos);
