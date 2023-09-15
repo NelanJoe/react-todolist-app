@@ -2,7 +2,7 @@ import { useState } from "react";
 import Layout from "../layouts/Layout";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, Form } from "react-router-dom";
 
 const AddTodo = ({ onAddTodo }) => {
   const [value, setValue] = useState("");
@@ -23,7 +23,7 @@ const AddTodo = ({ onAddTodo }) => {
       <div className="mt-12">
         <h2 className="font-bold text-4xl text-center">TodoInput</h2>
         <div className="shadow-md border-2 px-6 py-8 rounded-md">
-          <form onSubmit={handleSubmit}>
+          <Form action="/" method="POST" onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-2">
               <input
                 type="text"
@@ -40,7 +40,7 @@ const AddTodo = ({ onAddTodo }) => {
                 Cancel
               </Link>
             </div>
-          </form>
+          </Form>
         </div>
       </div>
     </Layout>
