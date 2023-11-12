@@ -39,21 +39,31 @@ const Home = ({
       <TodoAction onFilteredTodo={handleFiltered} />
       {todos.length > 0 ? (
         <div className="space-y-4 mt-10">
-          {filteredTodoByParams?.map((todo) => {
-            return (
-              <div key={todo.id}>
-                <Todo
-                  key={todo.id}
-                  id={todo.id}
-                  task={todo.task}
-                  completed={todo.completed}
-                  onEditTodo={onEditTodo}
-                  onDeleteTodo={onDeleteTodo}
-                  onCompletedTodo={onCompletedTodo}
-                />
-              </div>
-            );
-          })}
+          {!filteredTodoByParams.length <= 0 ? (
+            <>
+              {filteredTodoByParams?.map((todo) => {
+                return (
+                  <div key={todo.id}>
+                    <Todo
+                      key={todo.id}
+                      id={todo.id}
+                      task={todo.task}
+                      completed={todo.completed}
+                      onEditTodo={onEditTodo}
+                      onDeleteTodo={onDeleteTodo}
+                      onCompletedTodo={onCompletedTodo}
+                    />
+                  </div>
+                );
+              })}
+            </>
+          ) : (
+            <div className="my-10">
+              <h1 className="flex items-center justify-center font-bold text-2xl text-red-500 italic">
+                Not Found Todo
+              </h1>
+            </div>
+          )}
         </div>
       ) : (
         <div className="my-10">

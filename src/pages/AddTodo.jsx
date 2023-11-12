@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Layout from "../layouts/Layout";
-import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Link, Form } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link, Form } from "react-router-dom";
+
+import Layout from "../layouts/Layout";
 
 const AddTodo = ({ onAddTodo }) => {
   const [value, setValue] = useState("");
@@ -21,9 +21,9 @@ const AddTodo = ({ onAddTodo }) => {
   return (
     <Layout>
       <div className="mt-12">
-        <h2 className="font-bold text-4xl text-center">TodoInput</h2>
+        <h2 className="font-bold text-4xl text-center mb-5">TodoInput</h2>
         <div className="shadow-md border-2 px-6 py-8 rounded-md">
-          <Form action="/" method="POST" onSubmit={handleSubmit}>
+          <Form action="/" onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-2">
               <input
                 type="text"

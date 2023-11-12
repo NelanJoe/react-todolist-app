@@ -1,12 +1,15 @@
+import { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { useLocalStorage } from "./hooks/useLocalStorage";
+import todosData from "./data/todos.json";
+
 import Home from "./pages/Home";
 import AddTodo from "./pages/AddTodo";
-import { useState } from "react";
-import todosData from "./data/todos.json";
-import { useEffect } from "react";
 
 const App = () => {
-  const [todos, setTodos] = useState(todosData);
+  const [todos, setTodos] = useLocalStorage("todos", todosData);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
@@ -76,11 +79,18 @@ const App = () => {
    * */
   const handleDeleteAllTodo = () => {
     const confirmed = window.confirm("Are you want to delete all items?");
-    if (confirmed) setTodos([]);
+
+    if (confirmed) {
+      return setTodos([]);
+    }
   };
 
   const handleDeleteDoneTodo = () => {
-    setTodos((todos) => todos.filter((todo) => !todo.completed));
+    const confirmed = window.confirm("Are you want to delete done items?");
+
+    if (confirmed) {
+      return setTodos((todos) => todos.filter((todo) => !todo.completed));
+    }
   };
 
   return (
